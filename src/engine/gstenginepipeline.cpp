@@ -248,6 +248,9 @@ GstEnginePipeline::~GstEnginePipeline() {
       gst_object_unref(GST_OBJECT(audiobin_));
     }
     audiobin_ = nullptr;
+    if (audiobin) {
+      gst_object_unref(GST_OBJECT(audiobin));
+    }
   }
 
   qLog(Debug) << "Pipeline" << id() << "deleted";
