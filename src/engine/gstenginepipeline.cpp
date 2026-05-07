@@ -444,6 +444,9 @@ void GstEnginePipeline::Disconnect() {
       buffer_probe_cb_id_.reset();
     }
 
+    // The pad this probe sits on belongs to playbin's dynamic source pad and disappears when the pipeline goes to NULL, so we can't remove the probe here; just drop the stale ID.
+    pad_probe_cb_id_.reset();
+
     {
       GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline_));
       if (bus) {
