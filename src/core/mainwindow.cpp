@@ -2617,8 +2617,7 @@ void MainWindow::CommandlineOptionsReceived(const CommandlineOptions &options) {
   if (!options.urls().empty()) {
 
 #ifdef HAVE_TIDAL
-    const QList<QUrl> urls = options.urls();
-    for (const QUrl &url : urls) {
+    for (const QUrl &url : options.urls()) {
       if (url.scheme() == "tidal"_L1 && url.host() == "login"_L1) {
         Q_EMIT AuthorizationUrlReceived(url);
         return;

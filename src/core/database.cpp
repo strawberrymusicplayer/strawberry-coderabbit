@@ -190,7 +190,7 @@ QSqlDatabase Database::Connect() {
     q.prepare(QStringLiteral("SELECT ROWID FROM %1.sqlite_master WHERE type='table'").arg(key));
     if (!q.Exec() || !q.next()) {
       q.finish();
-      ExecSchemaCommandsFromFile(db, attached_databases_[key].schema_, 0);
+      ExecSchemaCommandsFromFile(db, attached_databases_.value(key).schema_, 0);
     }
   }
 
