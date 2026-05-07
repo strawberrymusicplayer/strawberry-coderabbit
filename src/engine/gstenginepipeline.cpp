@@ -1616,11 +1616,16 @@ void GstEnginePipeline::ErrorMessageReceived(GstMessage *msg) {
   gchar *debugs = nullptr;
 
   gst_message_parse_error(msg, &error, &debugs);
-  GQuark domain = error->domain;
-  int code = error->code;
-  QString message = QString::fromLocal8Bit(error->message);
+  GQuark domain = 0;
+  int code = 0;
+  QString message;
+  if (error) {
+    domain = error->domain;
+    code = error->code;
+    message = QString::fromLocal8Bit(error->message);
+    g_error_free(error);
+  }
   QString debugstr = QString::fromLocal8Bit(debugs);
-  g_error_free(error);
   g_free(debugs);
 
   if (pipeline_active_.value() && next_uri_set_.value() && (domain == GST_CORE_ERROR || domain == GST_RESOURCE_ERROR || domain == GST_STREAM_ERROR)) {
