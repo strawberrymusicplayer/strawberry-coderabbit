@@ -52,7 +52,7 @@ class Database : public QObject {
   static const int kSchemaVersion;
 
   struct AttachedDatabase {
-    AttachedDatabase() {}
+    AttachedDatabase() : is_temporary_(false) {}
     AttachedDatabase(const QString &filename, const QString &schema, bool is_temporary)
         : filename_(filename), schema_(schema), is_temporary_(is_temporary) {}
 
