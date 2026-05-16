@@ -67,7 +67,6 @@
 #include "lyrics/geniuslyricsprovider.h"
 #include "lyrics/ovhlyricsprovider.h"
 #include "lyrics/musixmatchlyricsprovider.h"
-#include "lyrics/chartlyricsprovider.h"
 #include "lyrics/songlyricscomlyricsprovider.h"
 #include "lyrics/azlyricscomlyricsprovider.h"
 #include "lyrics/elyricsnetlyricsprovider.h"
@@ -174,7 +173,6 @@ class ApplicationImpl {
           lyrics_providers->AddProvider(new GeniusLyricsProvider(lyrics_providers->network()));
           lyrics_providers->AddProvider(new OVHLyricsProvider(lyrics_providers->network()));
           lyrics_providers->AddProvider(new MusixmatchLyricsProvider(lyrics_providers->network()));
-          lyrics_providers->AddProvider(new ChartLyricsProvider(lyrics_providers->network()));
           lyrics_providers->AddProvider(new SongLyricsComLyricsProvider(lyrics_providers->network()));
           lyrics_providers->AddProvider(new AzLyricsComLyricsProvider(lyrics_providers->network()));
           lyrics_providers->AddProvider(new ElyricsNetLyricsProvider(lyrics_providers->network()));
