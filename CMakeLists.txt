@@ -696,7 +696,6 @@ set(SOURCES
   src/lyrics/azlyricscomlyricsprovider.cpp
   src/lyrics/elyricsnetlyricsprovider.cpp
   src/lyrics/letraslyricsprovider.cpp
-  src/lyrics/lyricfindlyricsprovider.cpp
   src/lyrics/lrcliblyricsprovider.cpp
 
   src/settings/settingsdialog.cpp
@@ -999,7 +998,6 @@ set(HEADERS
   src/lyrics/azlyricscomlyricsprovider.h
   src/lyrics/elyricsnetlyricsprovider.h
   src/lyrics/letraslyricsprovider.h
-  src/lyrics/lyricfindlyricsprovider.h
   src/lyrics/lrcliblyricsprovider.h
 
   src/settings/settingsdialog.h
